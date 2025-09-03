@@ -21,6 +21,7 @@ function timeToString(time: number): string {
   const formattedSec = addZero(diffInSec);
 
   return `${formattedHrs}:${formattedMin}:${formattedSec}`;
+  
 }
 
 
