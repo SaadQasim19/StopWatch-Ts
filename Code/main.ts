@@ -18,3 +18,11 @@ function timeToString(time: number): string {
 
   return `${formattedHrs}:${formattedMin}:${formattedSec}`;
 }
+
+function start() {
+  startTime = Date.now() - elapsedTime;
+  timerInterval = window.setInterval(() => {
+    elapsedTime = Date.now() - startTime;
+    display.innerHTML = timeToString(elapsedTime);
+  }, 1000);
+}
