@@ -26,3 +26,7 @@ function start() {
     display.innerHTML = timeToString(elapsedTime);
   }, 1000);
 }
+
+function stop() {
+  clearInterval(timerInterval);
+}
