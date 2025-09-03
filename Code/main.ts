@@ -36,3 +36,7 @@ function reset() {
   display.innerHTML = "00:00:00";
   elapsedTime = 0;
 }
+
+startBtn.addEventListener("click", start);
+stopBtn.addEventListener("click", stop);
+resetBtn.addEventListener("click", reset);
