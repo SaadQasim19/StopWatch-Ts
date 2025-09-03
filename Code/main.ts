@@ -30,3 +30,9 @@ function start() {
 function stop() {
   clearInterval(timerInterval);
 }
+
+function reset() {
+  clearInterval(timerInterval);
+  display.innerHTML = "00:00:00";
+  elapsedTime = 0;
+}
