@@ -7,17 +7,22 @@ const startBtn = document.getElementById("startBtn") as HTMLButtonElement;
 const stopBtn = document.getElementById("stopBtn") as HTMLButtonElement;
 const resetBtn = document.getElementById("resetBtn") as HTMLButtonElement;
 
+function addZero(num: number): string {
+  return num < 10 ? "0" + num : num.toString();
+}
+
 function timeToString(time: number): string {
   const diffInHrs = Math.floor(time / 3600000);
   const diffInMin = Math.floor((time % 3600000) / 60000);
   const diffInSec = Math.floor((time % 60000) / 1000);
 
-  const formattedHrs = diffInHrs.toString().padStart(2, "0");
-  const formattedMin = diffInMin.toString().padStart(2, "0");
-  const formattedSec = diffInSec.toString().padStart(2, "0");
+  const formattedHrs = addZero(diffInHrs);
+  const formattedMin = addZero(diffInMin);
+  const formattedSec = addZero(diffInSec);
 
   return `${formattedHrs}:${formattedMin}:${formattedSec}`;
 }
+
 
 function start() {
   startTime = Date.now() - elapsedTime;
@@ -27,9 +32,11 @@ function start() {
   }, 1000);
 }
 
+
 function stop() {
   clearInterval(timerInterval);
 }
+
 
 function reset() {
   clearInterval(timerInterval);
